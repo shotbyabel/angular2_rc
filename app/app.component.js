@@ -1,4 +1,4 @@
-System.register(['@angular/core', './property-binding/property-binding.component', './event-binding/event-binding.component', './twoway-binding/twoway-binding.component'], function(exports_1, context_1) {
+System.register(['@angular/core', './property-binding/property-binding.component', './event-binding/event-binding.component', './twoway-binding/twoway-binding.component', './property-customBinding/custom-propertyBinding.component'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['@angular/core', './property-binding/property-binding.component
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, property_binding_component_1, event_binding_component_1, twoway_binding_component_1;
+    var core_1, property_binding_component_1, event_binding_component_1, twoway_binding_component_1, custom_propertyBinding_component_1;
     var AppComponent;
     return {
         setters:[
@@ -25,10 +25,16 @@ System.register(['@angular/core', './property-binding/property-binding.component
             },
             function (twoway_binding_component_1_1) {
                 twoway_binding_component_1 = twoway_binding_component_1_1;
+            },
+            function (custom_propertyBinding_component_1_1) {
+                custom_propertyBinding_component_1 = custom_propertyBinding_component_1_1;
             }],
         execute: function() {
             AppComponent = (function () {
                 function AppComponent() {
+                    //parent-chid
+                    this.theName = '';
+                    //from first binding
                     this.name = 'Abel Boi';
                 }
                 AppComponent.prototype.myTest = function () {
@@ -37,8 +43,12 @@ System.register(['@angular/core', './property-binding/property-binding.component
                 AppComponent = __decorate([
                     core_1.Component({
                         selector: 'my-app',
-                        template: "\n    <h3>String Interpolation Binding</h3>\n              {{myTest()}}\n\n              <input type =\"text\" value=\"{{name}}\" class=\"{{'new-styles'}}\">\n\n              <property-bind></property-bind>\n              <event-bind></event-bind>\n              <twoway-bind></twoway-bind>\n       \n    ",
-                        directives: [property_binding_component_1.PropertyBindingComponent, event_binding_component_1.EventBindingComponent, twoway_binding_component_1.TwowayBindingComponent]
+                        template: "\n    <h3>String Interpolation Binding</h3>\n              {{myTest()}}\n\n              <input type =\"text\" value=\"{{name}}\" class=\"{{'new-styles'}}\">\n\n              <property-bind></property-bind>\n              <event-bind></event-bind>\n              <twoway-bind></twoway-bind>\n              \n              <br>\n              <hr>\n              \n              <h2>Property Binding to Custom Components</h2>\n              \n                <section class=\"parent-component\">\n\n                  <h2>Parent Component!</h2>\n                    <h4> Please enter your celebrity crush name</h4>\n                      <input type=\"text\" [(ngModel)]=\"theName\">\n                        <p class=\"code\">app.component.ts</p>\n                          \n                          <section class=\"child-component\">\n                            <property-custom [celebCrush]=\"theName\" [myAge]=\"23\"></property-custom>\n                          </section>  \n\n                 </section>\n  \n    ",
+                        directives: [property_binding_component_1.PropertyBindingComponent,
+                            event_binding_component_1.EventBindingComponent,
+                            twoway_binding_component_1.TwowayBindingComponent,
+                            custom_propertyBinding_component_1.CustomPropertyBindingComponent
+                        ]
                     }), 
                     __metadata('design:paramtypes', [])
                 ], AppComponent);
@@ -49,4 +59,4 @@ System.register(['@angular/core', './property-binding/property-binding.component
     }
 });
 
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImFwcC5jb21wb25lbnQudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7WUFxQkE7Z0JBQUE7b0JBRUUsU0FBSSxHQUFHLFVBQVUsQ0FBQztnQkFNcEIsQ0FBQztnQkFKQyw2QkFBTSxHQUFOO29CQUNFLE1BQU0sQ0FBQyxDQUFDLEtBQUssQ0FBQyxDQUFDO2dCQUNqQixDQUFDO2dCQXRCSDtvQkFBQyxnQkFBUyxDQUFDO3dCQUNQLFFBQVEsRUFBRSxRQUFRO3dCQUNsQixRQUFRLEVBQUUsbVRBVVQ7d0JBRUQsVUFBVSxFQUFFLENBQUMscURBQXdCLEVBQUUsK0NBQXFCLEVBQUUsaURBQXNCLENBQUM7cUJBQ3hGLENBQUM7O2dDQUFBO2dCQVNGLG1CQUFDO1lBQUQsQ0FSQSxBQVFDLElBQUE7WUFSRCx1Q0FRQyxDQUFBIiwiZmlsZSI6ImFwcC5jb21wb25lbnQuanMiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQge0NvbXBvbmVudH0gZnJvbSAnQGFuZ3VsYXIvY29yZSc7XG5pbXBvcnQge1Byb3BlcnR5QmluZGluZ0NvbXBvbmVudH0gZnJvbSAnLi9wcm9wZXJ0eS1iaW5kaW5nL3Byb3BlcnR5LWJpbmRpbmcuY29tcG9uZW50JztcbmltcG9ydCB7RXZlbnRCaW5kaW5nQ29tcG9uZW50fSBmcm9tICcuL2V2ZW50LWJpbmRpbmcvZXZlbnQtYmluZGluZy5jb21wb25lbnQnO1xuaW1wb3J0IHtUd293YXlCaW5kaW5nQ29tcG9uZW50fSBmcm9tICcuL3R3b3dheS1iaW5kaW5nL3R3b3dheS1iaW5kaW5nLmNvbXBvbmVudCc7XG5cbkBDb21wb25lbnQoe1xuICAgIHNlbGVjdG9yOiAnbXktYXBwJyxcbiAgICB0ZW1wbGF0ZTogYFxuICAgIDxoMz5TdHJpbmcgSW50ZXJwb2xhdGlvbiBCaW5kaW5nPC9oMz5cbiAgICAgICAgICAgICAge3tteVRlc3QoKX19XG5cbiAgICAgICAgICAgICAgPGlucHV0IHR5cGUgPVwidGV4dFwiIHZhbHVlPVwie3tuYW1lfX1cIiBjbGFzcz1cInt7J25ldy1zdHlsZXMnfX1cIj5cblxuICAgICAgICAgICAgICA8cHJvcGVydHktYmluZD48L3Byb3BlcnR5LWJpbmQ+XG4gICAgICAgICAgICAgIDxldmVudC1iaW5kPjwvZXZlbnQtYmluZD5cbiAgICAgICAgICAgICAgPHR3b3dheS1iaW5kPjwvdHdvd2F5LWJpbmQ+XG4gICAgICAgXG4gICAgYCxcblxuICAgIGRpcmVjdGl2ZXM6IFtQcm9wZXJ0eUJpbmRpbmdDb21wb25lbnQsIEV2ZW50QmluZGluZ0NvbXBvbmVudCwgVHdvd2F5QmluZGluZ0NvbXBvbmVudF1cbn0pXG5leHBvcnQgY2xhc3MgQXBwQ29tcG9uZW50IHtcblxuICBuYW1lID0gJ0FiZWwgQm9pJztcblxuICBteVRlc3QoKSB7XG4gICAgcmV0dXJuIDMgPT09IDE7XG4gIH1cblxufSJdLCJzb3VyY2VSb290IjoiL3NvdXJjZS8ifQ==
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImFwcC5jb21wb25lbnQudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7WUE0Q0E7Z0JBQUE7b0JBRUEsYUFBYTtvQkFDWCxZQUFPLEdBQUcsRUFBRSxDQUFDO29CQUtmLG9CQUFvQjtvQkFDbEIsU0FBSSxHQUFHLFVBQVUsQ0FBQztnQkFFcEIsQ0FBQztnQkFOQyw2QkFBTSxHQUFOO29CQUNFLE1BQU0sQ0FBQyxDQUFDLEtBQUssQ0FBQyxDQUFDO2dCQUNqQixDQUFDO2dCQTdDSDtvQkFBQyxnQkFBUyxDQUFDO3dCQUNQLFFBQVEsRUFBRSxRQUFRO3dCQUNsQixRQUFRLEVBQUUsZ2dDQTRCVDt3QkFFRCxVQUFVLEVBQUUsQ0FBQyxxREFBd0I7NEJBQ3hCLCtDQUFxQjs0QkFDckIsaURBQXNCOzRCQUN0QixpRUFBOEI7eUJBQzdCO3FCQUNqQixDQUFDOztnQ0FBQTtnQkFZRixtQkFBQztZQUFELENBWEEsQUFXQyxJQUFBO1lBWEQsdUNBV0MsQ0FBQSIsImZpbGUiOiJhcHAuY29tcG9uZW50LmpzIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHtDb21wb25lbnR9IGZyb20gJ0Bhbmd1bGFyL2NvcmUnO1xuaW1wb3J0IHtQcm9wZXJ0eUJpbmRpbmdDb21wb25lbnR9IGZyb20gJy4vcHJvcGVydHktYmluZGluZy9wcm9wZXJ0eS1iaW5kaW5nLmNvbXBvbmVudCc7XG5pbXBvcnQge0V2ZW50QmluZGluZ0NvbXBvbmVudH0gZnJvbSAnLi9ldmVudC1iaW5kaW5nL2V2ZW50LWJpbmRpbmcuY29tcG9uZW50JztcbmltcG9ydCB7VHdvd2F5QmluZGluZ0NvbXBvbmVudH0gZnJvbSAnLi90d293YXktYmluZGluZy90d293YXktYmluZGluZy5jb21wb25lbnQnO1xuaW1wb3J0IHtDdXN0b21Qcm9wZXJ0eUJpbmRpbmdDb21wb25lbnR9IGZyb20gJy4vcHJvcGVydHktY3VzdG9tQmluZGluZy9jdXN0b20tcHJvcGVydHlCaW5kaW5nLmNvbXBvbmVudCc7XG5cbkBDb21wb25lbnQoe1xuICAgIHNlbGVjdG9yOiAnbXktYXBwJyxcbiAgICB0ZW1wbGF0ZTogYFxuICAgIDxoMz5TdHJpbmcgSW50ZXJwb2xhdGlvbiBCaW5kaW5nPC9oMz5cbiAgICAgICAgICAgICAge3tteVRlc3QoKX19XG5cbiAgICAgICAgICAgICAgPGlucHV0IHR5cGUgPVwidGV4dFwiIHZhbHVlPVwie3tuYW1lfX1cIiBjbGFzcz1cInt7J25ldy1zdHlsZXMnfX1cIj5cblxuICAgICAgICAgICAgICA8cHJvcGVydHktYmluZD48L3Byb3BlcnR5LWJpbmQ+XG4gICAgICAgICAgICAgIDxldmVudC1iaW5kPjwvZXZlbnQtYmluZD5cbiAgICAgICAgICAgICAgPHR3b3dheS1iaW5kPjwvdHdvd2F5LWJpbmQ+XG4gICAgICAgICAgICAgIFxuICAgICAgICAgICAgICA8YnI+XG4gICAgICAgICAgICAgIDxocj5cbiAgICAgICAgICAgICAgXG4gICAgICAgICAgICAgIDxoMj5Qcm9wZXJ0eSBCaW5kaW5nIHRvIEN1c3RvbSBDb21wb25lbnRzPC9oMj5cbiAgICAgICAgICAgICAgXG4gICAgICAgICAgICAgICAgPHNlY3Rpb24gY2xhc3M9XCJwYXJlbnQtY29tcG9uZW50XCI+XG5cbiAgICAgICAgICAgICAgICAgIDxoMj5QYXJlbnQgQ29tcG9uZW50ITwvaDI+XG4gICAgICAgICAgICAgICAgICAgIDxoND4gUGxlYXNlIGVudGVyIHlvdXIgY2VsZWJyaXR5IGNydXNoIG5hbWU8L2g0PlxuICAgICAgICAgICAgICAgICAgICAgIDxpbnB1dCB0eXBlPVwidGV4dFwiIFsobmdNb2RlbCldPVwidGhlTmFtZVwiPlxuICAgICAgICAgICAgICAgICAgICAgICAgPHAgY2xhc3M9XCJjb2RlXCI+YXBwLmNvbXBvbmVudC50czwvcD5cbiAgICAgICAgICAgICAgICAgICAgICAgICAgXG4gICAgICAgICAgICAgICAgICAgICAgICAgIDxzZWN0aW9uIGNsYXNzPVwiY2hpbGQtY29tcG9uZW50XCI+XG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgPHByb3BlcnR5LWN1c3RvbSBbY2VsZWJDcnVzaF09XCJ0aGVOYW1lXCIgW215QWdlXT1cIjIzXCI+PC9wcm9wZXJ0eS1jdXN0b20+XG4gICAgICAgICAgICAgICAgICAgICAgICAgIDwvc2VjdGlvbj4gIFxuXG4gICAgICAgICAgICAgICAgIDwvc2VjdGlvbj5cbiAgXG4gICAgYCxcblxuICAgIGRpcmVjdGl2ZXM6IFtQcm9wZXJ0eUJpbmRpbmdDb21wb25lbnQsIFxuICAgICAgICAgICAgICAgICBFdmVudEJpbmRpbmdDb21wb25lbnQsIFxuICAgICAgICAgICAgICAgICBUd293YXlCaW5kaW5nQ29tcG9uZW50LCBcbiAgICAgICAgICAgICAgICAgQ3VzdG9tUHJvcGVydHlCaW5kaW5nQ29tcG9uZW50XG4gICAgICAgICAgICAgICAgIF1cbn0pXG5leHBvcnQgY2xhc3MgQXBwQ29tcG9uZW50IHtcblxuLy9wYXJlbnQtY2hpZFxuICB0aGVOYW1lID0gJyc7XG5cbiAgbXlUZXN0KCkge1xuICAgIHJldHVybiAzID09PSAxO1xuICB9XG4vL2Zyb20gZmlyc3QgYmluZGluZ1xuICBuYW1lID0gJ0FiZWwgQm9pJztcblxufSJdLCJzb3VyY2VSb290IjoiL3NvdXJjZS8ifQ==
