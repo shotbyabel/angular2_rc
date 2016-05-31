@@ -16,6 +16,7 @@ import {Component} from '@angular/core';
               <input type ="text" [value]="" [ngClass]="{eventStyles:true}" (keyup)="onKeyup(inputElement.value)" #inputElement>
               <br>
               <p>{{values}}</p>
+              <button class="my-btn"(click)="reset()">RESET</button>
 
 
   `,
@@ -35,6 +36,10 @@ export class EventBindingComponent {
 
   onKeyup(value: string) {
     this.values += value + ' | ';
+  }
+
+  reset() {
+    this.values = '';
   }
 
 
