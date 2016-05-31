@@ -10,6 +10,14 @@ import {Component} from '@angular/core';
 <br>
 <p>Binding to events.</p>
 
+
+              {{eventTest()}}
+
+              <input type ="text" [value]="" [ngClass]="{eventStyles:true}" (keyup)="onKeyup(inputElement.value)" #inputElement>
+              <br>
+              <p>{{values}}</p>
+
+
   `,
 
 
@@ -18,10 +26,15 @@ import {Component} from '@angular/core';
 export class EventBindingComponent {
 
 
-  nickName = 'kimono';
+  nickName = '';
+  values = '';
 
-  coolTest() {
-    return 0 === 8;
+  eventTest() {
+    return 0 === 0;
+  }
+
+  onKeyup(value: string) {
+    this.values += value + ' | ';
   }
 
 
