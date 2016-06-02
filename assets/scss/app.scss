@@ -42,9 +42,12 @@ color: blue;
 
   border: 2px solid black;
   padding: 10px;
-  background-color: #ccc;
+  background-color: #ADD8E6;
 
+}
 
+.child-input-bg{
+  background-color: #BFEFFF; 
 }
 
 .parent-component{
@@ -60,5 +63,19 @@ color: blue;
   font-family: 'Courier New';
   font-size: 11px;
   font-style: bold;
+
+}
+
+.parents-header{
+color: salmon;
+font-family: 'Verdana';
+
+
+
+}
+
+.childs-header{
+color: #7A67EE;
+font-family: 'Tahoma';
 
 }

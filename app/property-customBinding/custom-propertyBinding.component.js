@@ -23,7 +23,11 @@ System.register(['@angular/core'], function(exports_1, context_1) {
                 function CustomPropertyBindingComponent() {
                     this.celebCrush = '';
                     this.age = 34;
+                    this.theSpotsUpdate = new core_1.EventEmitter();
                 }
+                CustomPropertyBindingComponent.prototype.onThespotsUpdate = function (spots) {
+                    this.theSpotsUpdate.emit(spots);
+                };
                 __decorate([
                     core_2.Input('myAge'), 
                     __metadata('design:type', Object)
@@ -31,8 +35,14 @@ System.register(['@angular/core'], function(exports_1, context_1) {
                 CustomPropertyBindingComponent = __decorate([
                     core_1.Component({
                         selector: 'property-custom',
+<<<<<<< HEAD
+                        template: "\n\n  <h3>Child Component</h3>\n    <p class=\"code\">custom-propertyBinding.component.ts</p>\n      <p>Hola! <span class=\"parents-header\">{{celebCrush}}</span> and my age is {{age}}<p>\n       \n       <h4 class=\"childs-header\">Spots I want to take them</h4>\n          <input type=\"text\" (keyup)=\"onThespotsUpdate(spots.value)\" #spots>\n      \n  ",
+                        inputs: ['celebCrush'],
+                        outputs: ['theSpotsUpdate']
+=======
                         template: "\n\n<h3>Child Component</h3>\n<br>\n<p class=\"code\">custom-propertyBinding.component.ts</p>\n<p>Hooola {{celebCrush}} and my age is {{age}}<p>\n\n  ",
                         inputs: ['celebCrush']
+>>>>>>> 4273a8360a7e54d80f4756d5f1a8ff5426ff1be0
                     }), 
                     __metadata('design:paramtypes', [])
                 ], CustomPropertyBindingComponent);
@@ -43,4 +53,8 @@ System.register(['@angular/core'], function(exports_1, context_1) {
     }
 });
 
+<<<<<<< HEAD
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInByb3BlcnR5LWN1c3RvbUJpbmRpbmcvY3VzdG9tLXByb3BlcnR5QmluZGluZy5jb21wb25lbnQudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7O1lBcUJJO2dCQUFBO29CQUVFLGVBQVUsR0FBRyxFQUFFLENBQUM7b0JBQ0EsUUFBRyxHQUFHLEVBQUUsQ0FBQztvQkFDekIsbUJBQWMsR0FBRyxJQUFJLG1CQUFZLEVBQVUsQ0FBQztnQkFPOUMsQ0FBQztnQkFMRCx5REFBZ0IsR0FBaEIsVUFBaUIsS0FBYTtvQkFDNUIsSUFBSSxDQUFDLGNBQWMsQ0FBQyxJQUFJLENBQUMsS0FBSyxDQUFDLENBQUM7Z0JBRWhDLENBQUM7Z0JBTkQ7b0JBQUMsWUFBSyxDQUFDLE9BQU8sQ0FBQzs7MkVBQUE7Z0JBckJyQjtvQkFBQyxnQkFBUyxDQUFDO3dCQUNULFFBQVEsRUFBRSxpQkFBaUI7d0JBQzNCLFFBQVEsRUFBRSx1V0FTVDt3QkFFSCxNQUFNLEVBQUUsQ0FBQyxZQUFZLENBQUM7d0JBQ3RCLE9BQU8sRUFBRSxDQUFDLGdCQUFnQixDQUFDO3FCQUUxQixDQUFDOztrREFBQTtnQkFhRSxxQ0FBQztZQUFELENBWEEsQUFXQyxJQUFBO1lBWEQsMkVBV0MsQ0FBQSIsImZpbGUiOiJwcm9wZXJ0eS1jdXN0b21CaW5kaW5nL2N1c3RvbS1wcm9wZXJ0eUJpbmRpbmcuY29tcG9uZW50LmpzIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHtDb21wb25lbnQsIEV2ZW50RW1pdHRlcn0gZnJvbSAnQGFuZ3VsYXIvY29yZSc7XG5pbXBvcnQge0lucHV0fSBmcm9tICdAYW5ndWxhci9jb3JlJztcblxuQENvbXBvbmVudCh7XG4gIHNlbGVjdG9yOiAncHJvcGVydHktY3VzdG9tJyxcbiAgdGVtcGxhdGU6IGBcblxuICA8aDM+Q2hpbGQgQ29tcG9uZW50PC9oMz5cbiAgICA8cCBjbGFzcz1cImNvZGVcIj5jdXN0b20tcHJvcGVydHlCaW5kaW5nLmNvbXBvbmVudC50czwvcD5cbiAgICAgIDxwPkhvbGEhIDxzcGFuIGNsYXNzPVwicGFyZW50cy1oZWFkZXJcIj57e2NlbGViQ3J1c2h9fTwvc3Bhbj4gYW5kIG15IGFnZSBpcyB7e2FnZX19PHA+XG4gICAgICAgXG4gICAgICAgPGg0IGNsYXNzPVwiY2hpbGRzLWhlYWRlclwiPlNwb3RzIEkgd2FudCB0byB0YWtlIHRoZW08L2g0PlxuICAgICAgICAgIDxpbnB1dCB0eXBlPVwidGV4dFwiIChrZXl1cCk9XCJvblRoZXNwb3RzVXBkYXRlKHNwb3RzLnZhbHVlKVwiICNzcG90cz5cbiAgICAgIFxuICBgLFxuXG5pbnB1dHM6IFsnY2VsZWJDcnVzaCddLFxub3V0cHV0czogWyd0aGVTcG90c1VwZGF0ZSddXG5cbn0pXG5cbiAgICBleHBvcnQgY2xhc3MgQ3VzdG9tUHJvcGVydHlCaW5kaW5nQ29tcG9uZW50IHtcblxuICAgICAgY2VsZWJDcnVzaCA9ICcnO1xuICAgICAgQElucHV0KCdteUFnZScpIGFnZSA9IDM0O1xuICAgICAgdGhlU3BvdHNVcGRhdGUgPSBuZXcgRXZlbnRFbWl0dGVyPHN0cmluZz4oKTtcblxuICAgIG9uVGhlc3BvdHNVcGRhdGUoc3BvdHM6IHN0cmluZykge1xuICAgICAgdGhpcy50aGVTcG90c1VwZGF0ZS5lbWl0KHNwb3RzKTtcblxuICAgICAgfVxuXG4gICAgfSJdLCJzb3VyY2VSb290IjoiL3NvdXJjZS8ifQ==
+=======
 //# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInByb3BlcnR5LWN1c3RvbUJpbmRpbmcvY3VzdG9tLXByb3BlcnR5QmluZGluZy5jb21wb25lbnQudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7O1lBaUJBO2dCQUFBO29CQUVFLGVBQVUsR0FBRyxFQUFFLENBQUM7b0JBQ0EsUUFBRyxHQUFHLEVBQUUsQ0FBQztnQkFFM0IsQ0FBQztnQkFGQztvQkFBQyxZQUFLLENBQUMsT0FBTyxDQUFDOzsyRUFBQTtnQkFqQmpCO29CQUFDLGdCQUFTLENBQUM7d0JBQ1QsUUFBUSxFQUFFLGlCQUFpQjt3QkFDM0IsUUFBUSxFQUFFLHdKQU9UO3dCQUNILE1BQU0sRUFBRSxDQUFDLFlBQVksQ0FBQztxQkFFckIsQ0FBQzs7a0RBQUE7Z0JBT0YscUNBQUM7WUFBRCxDQUxBLEFBS0MsSUFBQTtZQUxELDJFQUtDLENBQUEiLCJmaWxlIjoicHJvcGVydHktY3VzdG9tQmluZGluZy9jdXN0b20tcHJvcGVydHlCaW5kaW5nLmNvbXBvbmVudC5qcyIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7Q29tcG9uZW50fSBmcm9tICdAYW5ndWxhci9jb3JlJztcbmltcG9ydCB7SW5wdXR9IGZyb20gJ0Bhbmd1bGFyL2NvcmUnO1xuXG5AQ29tcG9uZW50KHtcbiAgc2VsZWN0b3I6ICdwcm9wZXJ0eS1jdXN0b20nLFxuICB0ZW1wbGF0ZTogYFxuXG48aDM+Q2hpbGQgQ29tcG9uZW50PC9oMz5cbjxicj5cbjxwIGNsYXNzPVwiY29kZVwiPmN1c3RvbS1wcm9wZXJ0eUJpbmRpbmcuY29tcG9uZW50LnRzPC9wPlxuPHA+SG9vb2xhIHt7Y2VsZWJDcnVzaH19IGFuZCBteSBhZ2UgaXMge3thZ2V9fTxwPlxuXG4gIGAsXG5pbnB1dHM6IFsnY2VsZWJDcnVzaCddXG5cbn0pXG5cbmV4cG9ydCBjbGFzcyBDdXN0b21Qcm9wZXJ0eUJpbmRpbmdDb21wb25lbnQge1xuXG4gIGNlbGViQ3J1c2ggPSAnJztcbiAgQElucHV0KCdteUFnZScpIGFnZSA9IDM0O1xuXG59Il0sInNvdXJjZVJvb3QiOiIvc291cmNlLyJ9
+>>>>>>> 4273a8360a7e54d80f4756d5f1a8ff5426ff1be0
