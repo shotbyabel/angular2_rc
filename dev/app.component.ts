@@ -8,49 +8,60 @@ import {CustomPropertyBindingComponent} from './property-customBinding/custom-pr
     selector: 'my-app',
     template: `
     <h3>String Interpolation Binding</h3>
-              {{myTest()}}
+        {{myTest()}}
 
-              <input type ="text" value="{{name}}" class="{{'new-styles'}}">
+          <input type ="text" value="{{name}}" class="{{'new-styles'}}">
 
-              <property-bind></property-bind>
+            <property-bind></property-bind>
               <event-bind></event-bind>
-              <twoway-bind></twoway-bind>
+                <twoway-bind></twoway-bind>
               
               <br>
               <hr>
               
-              <h2>Property Binding to Custom Components</h2>
+            <h2>Property Binding to Custom Components</h2>
               
-                <section class="parent-component">
+              <section class="parent-component">
 
-                  <h2>Parent Component!</h2>
-                    <h4> Please enter your celebrity crush name</h4>
+                <h2>Parent Component!</h2>
+                  <p class="code">app.component.ts</p>
+                    <h4 class="parents-header"> Please enter your celebrity crush name</h4>
                       <input type="text" [(ngModel)]="theName">
-                        <p class="code">app.component.ts</p>
-                          
-                          <section class="child-component">
-                            <property-custom [celebCrush]="theName" [myAge]="23"></property-custom>
-                          </section>  
+                      <br>    
+                      <br>
+                        <section class="child-component">
 
-                 </section>
+                          <property-custom [celebCrush]="theName" 
+                                           [myAge]="23" 
+                                           (theSpotsUpdate)="theSpots = $event">
+                          </property-custom>
+
+                            <p class="parent-component">a spot called: 
+                              <span class="childs-header">{{theSpots}}
+                                <p class="code">app.component.ts</p>
+                              </span>
+                            </p>
+
+                        </section>  
+                </section>
   
     `,
 
-    directives: [PropertyBindingComponent, 
-                 EventBindingComponent, 
-                 TwowayBindingComponent, 
-                 CustomPropertyBindingComponent
-                 ]
+directives: [PropertyBindingComponent, EventBindingComponent, TwowayBindingComponent,CustomPropertyBindingComponent]
+
 })
-export class AppComponent {
 
-//parent-chid
-  theName = '';
+    export class AppComponent {
 
-  myTest() {
-    return 3 === 1;
-  }
-//from first binding
-  name = 'Abel Boi';
+    //parent-chid
+      theName = '';
+      theSpots = '';
 
-}
+      myTest() {
+        return 3 === 1;
+      }
+    //from first binding
+      name = 'Abel Boi';
+
+    }
+
