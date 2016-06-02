@@ -11,7 +11,7 @@ import {Input} from '@angular/core';
 <p>Hooola {{celebCrush}} and my age is {{age}}<p>
 
   `,
-inputs: ['name: celebCrush']
+inputs: ['celebCrush']
 
 })
 

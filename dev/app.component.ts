@@ -25,7 +25,7 @@ import {CustomPropertyBindingComponent} from './property-customBinding/custom-pr
 
                   <h2>Parent Component!</h2>
                     <h4> Please enter your celebrity crush name</h4>
-                      <input type="text" [(ngModel)]="theName">
+                      <input type="text" placeholder="name goes here"[(ngModel)]="theName">
                         <p class="code">app.component.ts</p>
                           
                           <section class="child-component">
@@ -42,6 +42,7 @@ import {CustomPropertyBindingComponent} from './property-customBinding/custom-pr
                  CustomPropertyBindingComponent
                  ]
 })
+
 export class AppComponent {
 
 //parent-chid
