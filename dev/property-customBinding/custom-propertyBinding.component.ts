@@ -14,20 +14,20 @@ import {Input} from '@angular/core';
       
   `,
 
-inputs: ['celebCrush'],
-outputs: ['theSpotsUpdate']
+  inputs: ['celebCrush'],
+  outputs: ['theSpotsUpdate']
 
 })
 
-    export class CustomPropertyBindingComponent {
+export class CustomPropertyBindingComponent {
 
-      celebCrush = '';
-      @Input('myAge') age = 34;
-      theSpotsUpdate = new EventEmitter<string>();
+  celebCrush = '';
+  @Input('myAge') age = 34;
+  theSpotsUpdate = new EventEmitter<string>();
 
-    onThespotsUpdate(spots: string) {
-      this.theSpotsUpdate.emit(spots);
+  onThespotsUpdate(spots: string) {
+    this.theSpotsUpdate.emit(spots);
 
-      }
+  }
 
-    }
+}

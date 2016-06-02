@@ -5,8 +5,8 @@ import {TwowayBindingComponent} from './twoway-binding/twoway-binding.component'
 import {CustomPropertyBindingComponent} from './property-customBinding/custom-propertyBinding.component';
 
 @Component({
-    selector: 'my-app',
-    template: `
+  selector: 'my-app',
+  template: `
     <h3>String Interpolation Binding</h3>
         {{myTest()}}
 
@@ -47,21 +47,21 @@ import {CustomPropertyBindingComponent} from './property-customBinding/custom-pr
   
     `,
 
-directives: [PropertyBindingComponent, EventBindingComponent, TwowayBindingComponent,CustomPropertyBindingComponent]
+  directives: [PropertyBindingComponent, EventBindingComponent, TwowayBindingComponent, CustomPropertyBindingComponent]
 
 })
 
-    export class AppComponent {
+export class AppComponent {
 
-    //parent-chid
-      theName = '';
-      theSpots = '';
+  //parent-chid
+  theName = '';
+  theSpots = '';
 
-      myTest() {
-        return 3 === 1;
-      }
-    //from first binding
-      name = 'Abel Boi';
+  myTest() {
+    return 3 === 1;
+  }
+  //from first binding
+  name = 'Abel Boi';
 
-    }
+}
 
