@@ -3,6 +3,7 @@ import {PropertyBindingComponent} from './property-binding/property-binding.comp
 import {EventBindingComponent} from './event-binding/event-binding.component';
 import {TwowayBindingComponent} from './twoway-binding/twoway-binding.component';
 import {CustomPropertyBindingComponent} from './property-customBinding/custom-propertyBinding.component';
+import {InputComponent} from './bindings/input.component';
 
 @Component({
   selector: 'my-app',
@@ -44,14 +45,46 @@ import {CustomPropertyBindingComponent} from './property-customBinding/custom-pr
 
                         </section>  
                 </section>
+                      <br>
+                      <hr>
+     <h3>Input Component</h3>     
+      
+        <div class="container">
+          <my-input (submittedCustom)="onSubmit($event)"></my-input>
+
+
+        </div>
+
+        <div class="container">
+          
+
+        </div>
+
   
     `,
 
-  directives: [PropertyBindingComponent, EventBindingComponent, TwowayBindingComponent, CustomPropertyBindingComponent]
+  directives: [PropertyBindingComponent, EventBindingComponent, TwowayBindingComponent, CustomPropertyBindingComponent, InputComponent]
 
 })
 
 export class AppComponent {
+
+  //input-component objects
+  myself = {
+    name: '',
+    age: ''
+  };
+
+  confirmMyself = {
+    name: '',
+    age: ''
+  };
+
+  //submit the data from the input-component
+  onSubmit(myself: {name: string, age: string}) {
+    this.myself = myself;
+
+  }
 
   //parent-chid
   theName = '';
