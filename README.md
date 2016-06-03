@@ -1,14 +1,15 @@
-##Angular 2 Practice by cording..
+##Angular 2
 
-1: Clone repo
+###DATA BINDING
 
-2: Install packages
-```
-npm install
-```
-3: Start server (includes auto refreshing) and gulp watcher
-```
-npm start
-```
+- Two Way Binding
 
-4: Visit localhost:3000 (default) if the tab hasn't opened automatically
+- Event Binding
+
+- Property Binding
+
+- String Interpolation
+
+- Custome Events Binding
+
+
