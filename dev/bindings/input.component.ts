@@ -22,6 +22,7 @@ import {Component, EventEmitter} from '@angular/core';
           <button [disabled]="!isValid" (click)="onSubmit()">submit</button>          
 
   `,
+  inputs: ['myself'],
   outputs: ['submittedCustom'];
 
 })
@@ -53,7 +54,7 @@ export class InputComponent {
   }
 
   onSubmit(){
-    this.submitted.emit(this.myself);
+    this.submittedCustom.emit(this.myself);
   }
 
 

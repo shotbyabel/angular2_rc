@@ -4,6 +4,7 @@ import {EventBindingComponent} from './event-binding/event-binding.component';
 import {TwowayBindingComponent} from './twoway-binding/twoway-binding.component';
 import {CustomPropertyBindingComponent} from './property-customBinding/custom-propertyBinding.component';
 import {InputComponent} from './bindings/input.component';
+import {ConfirmComponent} from './bindings/confirm.component';
 
 @Component({
   selector: 'my-app',
@@ -50,12 +51,13 @@ import {InputComponent} from './bindings/input.component';
      <h3>Input Component</h3>     
       
         <div class="container">
-          <my-input (submittedCustom)="onSubmit($event)"></my-input>
+          <my-input (submittedCustom)="onSubmit($event)" [myself]="confirmMyself"></my-input>
 
 
         </div>
 
         <div class="container">
+          <my-confirm (confirmCustom)="onConfirm($event)" [myself]="myself"></my-confirm>
           
 
         </div>
@@ -63,7 +65,7 @@ import {InputComponent} from './bindings/input.component';
   
     `,
 
-  directives: [PropertyBindingComponent, EventBindingComponent, TwowayBindingComponent, CustomPropertyBindingComponent, InputComponent]
+  directives: [PropertyBindingComponent, EventBindingComponent, TwowayBindingComponent, CustomPropertyBindingComponent, InputComponent, ConfirmComponent]
 
 })
 
@@ -82,7 +84,13 @@ export class AppComponent {
 
   //submit the data from the input-component
   onSubmit(myself: {name: string, age: string}) {
-    this.myself = myself;
+    this.myself = { name: myself.name, age: myself.age });
+
+  }
+
+  //check the data
+  onConfirm(myself: { name: string, age: string }) {
+    this.confirmMyself = { name: myself.name, age: myself.age });
 
   }
 
