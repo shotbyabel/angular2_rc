@@ -5,6 +5,10 @@ import {TwowayBindingComponent} from './twoway-binding/twoway-binding.component'
 import {CustomPropertyBindingComponent} from './property-customBinding/custom-propertyBinding.component';
 import {InputComponent} from './bindings/input.component';
 import {ConfirmComponent} from './bindings/confirm.component';
+//DIRECTIVES
+import {AttributeDirectiveComponent} from './directives/attribute-directives.component';
+import {HighLightDirective} from './directives/highlight.directive';
+
 
 @Component({
   selector: 'my-app',
@@ -61,11 +65,19 @@ import {ConfirmComponent} from './bindings/confirm.component';
           
 
         </div>
+        <my-attribute-directive></my-attribute-directive>
 
   
     `,
 
-  directives: [PropertyBindingComponent, EventBindingComponent, TwowayBindingComponent, CustomPropertyBindingComponent, InputComponent, ConfirmComponent]
+  directives: [PropertyBindingComponent, 
+               EventBindingComponent, 
+               TwowayBindingComponent, 
+               CustomPropertyBindingComponent, 
+               InputComponent, ConfirmComponent, 
+               AttributeDirectiveComponent,
+               HighLightDirective
+               ]
 
 })
 
