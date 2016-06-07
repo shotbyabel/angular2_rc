@@ -5,6 +5,40 @@ body {
   font-size: 16px;
 }
 
+.directive {
+  border: 2px solid #ccc;
+  background-color: #dbebff;
+  padding: 16px;
+  margin-bottom: 32px;
+
+}
+
+
+.directive-two {
+  border: 3px solid #ccc;
+  background-color: #ADD8E6;
+  padding: 16px;
+  margin-bottom: 32px;
+
+}
+
+
+.directive-three {
+  border: 5px solid red;
+  background-color: salmon;
+  padding: 16px;
+  margin-bottom: 32px;
+
+}
+
+.red{
+  color: red;
+}
+
+.underlined {
+  text-decoration: underline;
+}
+
 .new-styles{
 font-size: 16px;
 font-style: italic;
