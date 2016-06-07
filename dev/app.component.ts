@@ -8,6 +8,8 @@ import {ConfirmComponent} from './bindings/confirm.component';
 //DIRECTIVES
 import {AttributeDirectiveComponent} from './directives/attribute-directives.component';
 import {HighLightDirective} from './directives/highlight.directive';
+import {StructuralDirectiveComponent} from './directives/structural-directives.component';
+import {UnlessDirective} from './directives/unless.directive';
 
 
 @Component({
@@ -66,6 +68,11 @@ import {HighLightDirective} from './directives/highlight.directive';
 
         </div>
         <my-attribute-directive></my-attribute-directive>
+        <hr>
+        <h3>Structural Directives</h3>
+        <my-structural-directive><my-structural-directive>
+
+
 
   
     `,
@@ -76,7 +83,9 @@ import {HighLightDirective} from './directives/highlight.directive';
                CustomPropertyBindingComponent, 
                InputComponent, ConfirmComponent, 
                AttributeDirectiveComponent,
-               HighLightDirective
+               HighLightDirective,
+               StructuralDirectiveComponent,
+               UnlessDirective
                ]
 
 })

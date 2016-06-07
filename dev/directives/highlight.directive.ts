@@ -25,7 +25,7 @@ onMouseLeave(){
   this.highlight(null);
 }
 private highlight(color: string) {
-  this._renderer.setElementStyle(this._elRef, 'background-color', color);
+  this._renderer.setElementStyle(this._elRef.nativeElement, 'background-color', color);
 
 }
 
