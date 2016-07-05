@@ -5,11 +5,13 @@ import {TwowayBindingComponent} from './twoway-binding/twoway-binding.component'
 import {CustomPropertyBindingComponent} from './property-customBinding/custom-propertyBinding.component';
 import {InputComponent} from './bindings/input.component';
 import {ConfirmComponent} from './bindings/confirm.component';
-//DIRECTIVES
 import {AttributeDirectiveComponent} from './directives/attribute-directives.component';
 import {HighLightDirective} from './directives/highlight.directive';
 import {StructuralDirectiveComponent} from './directives/structural-directives.component';
 import {UnlessDirective} from './directives/unless.directive';
+import {Component1Component} from './component1.component';
+import {Component2Component} from './component2.component';
+
 
 
 @Component({
@@ -70,11 +72,17 @@ import {UnlessDirective} from './directives/unless.directive';
         <my-attribute-directive></my-attribute-directive>
         <hr>
         <h3>Structural Directives</h3>
-        <my-structural-directive><my-structural-directive>
+        <my-structural-directive></my-structural-directive>
+        <hr>
+        
+        <h2>Services</h2>
+          <h3>Component 1</h3>
+          <component-1></component-1>
+           <h3>Component 2</h3>
+          <component-2></component-2>
 
 
 
-  
     `,
 
   directives: [PropertyBindingComponent, 
@@ -85,7 +93,9 @@ import {UnlessDirective} from './directives/unless.directive';
                AttributeDirectiveComponent,
                HighLightDirective,
                StructuralDirectiveComponent,
-               UnlessDirective
+               UnlessDirective,
+               Component1Component,
+               Component2Component,
                ]
 
 })
