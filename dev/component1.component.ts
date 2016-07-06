@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
 import {LoggingService} from './services/logging.service';
 import {CalculatorService} from './services/calculator.service';
+import {DataService} from './services/data.service';
 
 @Component({
     selector: 'component-1',
@@ -23,17 +24,29 @@ import {CalculatorService} from './services/calculator.service';
                 <br>
                 <p> EQUALS: {{result}}</p>
                 <button (click)="clearCalc()">CLEAR</button>
+           <hr>     
+
+                <input type="text" #newHouseData>
+                <button (click)="onInsert(newHouseData.value)">insert house</button>
+    </div>
+    <div>
+        <h3>Data Service</h3>
+            <button (click)="onGetHouseData()">Get House Data</button>
+                <p>{{houseData}}</p>
     </div>        
 
-
-
     `,
-    providers: [LoggingService, CalculatorService]
+    providers: [LoggingService, CalculatorService, DataService]
 })
 
 export class Component1Component {
 
-    constructor(private _loggingService: LoggingService, private _calculatorService: CalculatorService) {}
+    result: string;
+    houseData: string;
+
+    constructor(private _loggingService: LoggingService, 
+                private _calculatorService: CalculatorService,
+                private _dataService: DataService) {}
 
 onLog(message: string){
     this._loggingService.log(message);
@@ -52,5 +65,13 @@ onAdd(num1: number, num2: number) {
     this.result = '';
 
   }
+
+//data.service click events
+onGetHouseData(){
+    this.houseData = this._dataService.getRandomHouse();
+}
+
+
+
 
 }
