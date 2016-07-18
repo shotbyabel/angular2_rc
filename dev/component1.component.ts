@@ -14,6 +14,7 @@ import {DataService} from './services/data.service';
             <button (click)="onLog(message.value)">SEND</button>
     </div>
 
+    <section class="calculator-data">
     <div>
         <h4>Calculator Service</h4>
             <p> Add or Multiply</p>
@@ -25,15 +26,20 @@ import {DataService} from './services/data.service';
                 <p> EQUALS: {{result}}</p>
                 <button (click)="clearCalc()">CLEAR</button>
            <hr>     
-
-                <input type="text" #newHouseData>
-                <button (click)="onInsert(newHouseData.value)">insert house</button>
     </div>
+    </section>       
+    <section class="house-data">
+                <input type="text" #newHouseData>
+                <button (click)="onHouseInsert(newHouseData.value)">insert house</button>
+
     <div>
         <h3>Data Service</h3>
             <button (click)="onGetHouseData()">Get House Data</button>
+                <br>
                 <p>{{houseData}}</p>
+                
     </div>        
+    </section>
 
     `,
     providers: [LoggingService, CalculatorService, DataService]
@@ -42,7 +48,7 @@ import {DataService} from './services/data.service';
 export class Component1Component {
 
     result: string;
-    houseData: string;
+    houseData: string;//line 39
 
     constructor(private _loggingService: LoggingService, 
                 private _calculatorService: CalculatorService,
@@ -70,8 +76,10 @@ onAdd(num1: number, num2: number) {
 onGetHouseData(){
     this.houseData = this._dataService.getRandomHouse();
 }
-
-
+// insert newHouseData
+onHouseInsert(value: string){
+    this._dataService.insert(value);
+}
 
 
 }
