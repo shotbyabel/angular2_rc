@@ -66,9 +66,8 @@ import {Component2Component} from './component2.component';
 
         <div class="container">
           <my-confirm (confirmCustom)="onConfirm($event)" [myself]="myself"></my-confirm>
-          
-
         </div>
+        
         <my-attribute-directive></my-attribute-directive>
         <hr>
         <h3>Structural Directives</h3>
@@ -76,8 +75,14 @@ import {Component2Component} from './component2.component';
         <hr>
         
         <h2>Services</h2>
+        
+        <section class="component-1">
+        
           <h3>Component 1</h3>
           <component-1></component-1>
+        
+        </section>
+
            <h3>Component 2</h3>
           <component-2></component-2>
 
